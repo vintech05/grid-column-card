@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+*, 
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* (paragraphs) */
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+    /* background, headings, buttons */
+    --Very-light-gray: hsl(0, 0%, 95%);
+
+    --Font-size: 15px
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Very-light-gray);
+    font-size: var(--Font-size);
+    height: calc(100vh - 6em);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    height: 400px;
+}
+
+.grid > * {
+    padding: 3em;
+    color: var(--Transparent-white);
+}
+
+.sedans {
+    border-radius: .5em 0 0 .5em;
+    background-color: var(--Bright-orange);
+}
+
+.suv {
+    background-color: var(--Dark-cyan);
+}
+
+.luxury {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0 .5em .5em 0;
+}
+
+.title {  
+    padding-top: 1em;
+    font-size: 2.5em;
+    font-family: 'Big Shoulders Display';
+    font-weight: 700;
+    padding-bottom: 1em;
+}
+
+.description {
+    font-family: 'Lexend Deca';
+    font-weight: 400;
+    line-height: 1.75em;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 2em;
+    font-family: 'Lexend Deca';
+    background: var(--Very-light-gray);
+    padding: 1em 2em 1em 2em;
+    color: var(--Bright-orange);
+    border: none;
+    margin-top: 5em;
+    transition: 300ms ease-in-out;
+    border: 2px solid var(--Transparent-white);
+}
+
+button:hover {
+    background: none;
+    color: var(--Transparent-white);
+}
+
+@media (max-width: 600px) {
+
+    body {
+        display: grid;
+        place-items: center;
+        margin-top: 3em;
+    }
+
+    .grid {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    
+    .sedans {
+        border-radius: .5em .5em 0 0;
+    }
+    
+    .luxury {
+        border-radius: 0 0 .5em .5em;
+    }
+
+    .description {
+        width: calc(100% - 18vw);
+    }
+}
